@@ -1,5 +1,17 @@
 var pg = require('pg');
-var connectionString = "postgres://" + process.env.DB_USER + ":"+ process.env.DB_PASSWORD+"@localhost/"+ process.env.DB_NAME;
+
+if(process.env.ENVIORNMENT === 'production') {
+  var connectionString = process.env.DATABASE_URL
+} else {
+  var connectionString = {
+    host: process.env.DB_HOST,
+    port: 5432
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD
+  }
+}
+
 
 var bcrypt = require('bcrypt');
 var salt = bcrypt.genSaltSync(10);

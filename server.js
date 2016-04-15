@@ -7,7 +7,6 @@ var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var pg = require('pg');
-var connectionString = "postgres://" + process.env.DB_USER + ":"+ process.env.DB_PASSWORD+"@localhost/"+ process.env.DB_NAME;
 var session = require('express-session');
 var pgSession = require('connect-pg-simple')(session);
 var path = require('path');
@@ -15,6 +14,18 @@ var methodOverride = require('method-override');
 var papercut = require('papercut');
 var db = require('./db/pg');
 var app = express();
+
+if(process.env.ENVIORNMENT === 'production') {
+  var connectionString = process.env.DATABASE_URL
+} else {
+  var connectionString = {
+    host: process.env.DB_HOST,
+    port: 5432
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD
+  }
+}
 
 var userRoutes = require(path.join(__dirname, '/routes/users'));
 // var profileRoutes = require(path.join(__dirname, '/routes/profile'));
