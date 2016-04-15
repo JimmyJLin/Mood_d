@@ -13,6 +13,8 @@ if(process.env.ENVIORNMENT === 'production') {
 }
 
 
+
+
 var bcrypt = require('bcrypt');
 var salt = bcrypt.genSaltSync(10);
 var session = require('express-session');
