@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Moo-d</a>
+  </div>
+  <div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="/users/profile/">Profile</a></li>
+      <li><a href="/users/profile/update">Update Profile</a></li>
+      <li><a href="/users/showAll">Friends Finder</a></li>
+      <li><a>Welcome <%= user.name %></a></li>
+    </ul>
+    <div class="button-template">
+      <form method="POST" action="/users/logout?_method=DELETE">
+        <button class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-log-out"></span>logout</button>
+      </form>
+    </div>
+  </div><!--/.nav-collapse -->
+</div>
+</nav>

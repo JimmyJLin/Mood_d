@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moo-d</title>
+  <%- include ../partials/head %>
+
+</head>
+<body id="frontpage" background='/img/frontpage.jpg'>
+  <header>
+    <%- include ../partials/homenav %>
+  </header>
+  <br>
+  <br>
+    <div class="container">
+      <div class="button-template">
+        <a href="/users/signup" class="btn btn-lg btn-primary"><span class="signup"></span>Signup</a>
+      </div>
+      <div class="button-template">
+        <a href="/users/login" class="btn btn-lg btn-success"><span class="login"></span>Login</a>
+      </div>
+    </div>
+  <div>
+  </div>
+  <%- include ../partials/footer %>
+
+</body>
+</html>

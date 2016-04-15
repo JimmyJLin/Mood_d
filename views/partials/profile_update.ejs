@@ -1,0 +1,59 @@
+
+    <div class="container">
+
+      <div class="starter-template">
+      <form class="form-horizontal" action="/users/profile" method="post">
+        <fieldset>
+          <h1>Moo changer</h1>
+          <h1>Welcome <%= user.name %></h1>
+
+        <br>
+
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="activity">Activity</label>
+          <div class="col-md-6">
+            <select id="activity" name="activity" class="form-control">
+              <option value="1">Work</option>
+              <option value="2">School</option>
+              <option value="3">Home</option>
+              <option value="4">Park</option>
+              <option value="5">Beach</option>
+              <option value="6">Yoga</option>
+              <option value="7">Walking Dog</option>
+              <option value="8">Starbucks</option>
+
+            </select>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="emotion">Emotion</label>
+          <div class="col-md-6">
+            <select id="emotion" name="emotion" class="form-control">
+              <option value="1">Tender</option>
+              <option value="2">Scared</option>
+              <option value="3">Angry</option>
+              <option value="4">Sad</option>
+              <option value="5">Happy</option>
+              <option value="6">Excited</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="submit"></label>
+          <div class="col-md-4">
+            <button id="submit" type="submit" class="btn btn-lg btn-success">Update Me!</button>
+          </div>
+        </div>
+
+        </fieldset>
+        </form>
+
+      </div>
+
+    </div><!-- /.container -->

@@ -1,0 +1,36 @@
+<div class="containter">
+<% profileAll.forEach(function(profile) { %>
+    <a>
+      <div class="thecard">
+        <div class="card-caption">
+          <ul id="res">
+            <p>
+              <li><%= profile.profile_name %></li>
+              <li>Activity: <%= profile.activity_name %></li>
+              <li>Emotion: <%= profile.emotion_name %></li>
+              <br>
+            </p>
+            <form class="form-horizontal" action="/users/messages" method="post">
+            <fieldset>
+
+
+            <!-- Textarea -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="message">Message</label>
+              <div class="col-md-12">
+                <textarea class="form-control" id="message" name="message"></textarea>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <input type="hidden" name="name" value=<%=profile.profile_name%> >
+              <button id="submit" type="submit" class="btn btn btn-success">Message Me!</button>
+            </div>
+            </fieldset>
+            </form>
+
+          </ul>
+        </div>
+      </div>
+    </a>
+  <% }) %>
+  </div>

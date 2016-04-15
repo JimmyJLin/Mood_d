@@ -1,0 +1,28 @@
+
+  <% messageData.forEach(function(profile) { %>
+  <a>
+    <div class="thecard">
+      <div class="card-caption">
+        <ul id="res">
+          <p>
+            <li>Sender Name: <%= profile.receiver %></li>
+            <li>Message: <%= profile.message %></li>
+          </p>
+        </ul>
+      </div>
+    </div>
+  </a>
+  <% }) %>
+
+  users.route('/messages')
+    .get(db.showMessage, function(req, res){
+      res.render('partials/message', {
+        user: req.session.user,
+        profileData: res.rows})
+    })
+
+    .post(db.showMessage, function(req, res){
+      res.render('partials/message',{
+        user: req.session.user,
+        messageData: res.rows})
+    })
