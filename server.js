@@ -17,7 +17,7 @@ var papercut = require('papercut');
 var db = require('./db/pg');
 var app = express();
 
-if(process.env.ENVIORNMENT === 'production') {
+if(process.env.ENVIRONMENT === 'production') {
   var connectionString = process.env.DATABASE_URL
 } else {
   var connectionString = {

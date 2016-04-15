@@ -1,6 +1,6 @@
 var pg = require('pg');
 
-if(process.env.ENVIORNMENT === 'production') {
+if(process.env.ENVIRONMENT === 'production') {
   var connectionString = process.env.DATABASE_URL
 } else {
   var connectionString = {
@@ -11,9 +11,6 @@ if(process.env.ENVIORNMENT === 'production') {
     password: process.env.DB_PASSWORD
   }
 }
-
-
-
 
 var bcrypt = require('bcrypt');
 var salt = bcrypt.genSaltSync(10);
